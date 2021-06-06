@@ -22,7 +22,7 @@ def extrair_all_audio(path, apagar_video =True):
 	filtraMp4 = lambda x: '.mp4' in x
 	files = list(filter(filtraMp4, os.listdir(path)))
 	for i in range(len(files)):
-		os.system('clear')
+		os.system('cls || clear')
 		print(f"[{i + 1}] - Extraindo audio de -> {path + files[i]}\t\t\t[{i}\\{len(files)} - {i/len(files)*100:.2f}%]")
 		extract_audio_video(os.path.join(path, files[i]), excluir_video = apagar_video)
 
@@ -68,7 +68,7 @@ def baixa_playlist(url_playlist, modo):
 		not_downloaded = []
 		cria_estrutura_dir()
 		
-		os.system('clear')
+		os.system('cls || clear')
 
 		for i in range(len(urls)):
 			try:
@@ -79,7 +79,7 @@ def baixa_playlist(url_playlist, modo):
 				baixa_video(urls[i], is_playlist = 1, output='./Playlist')
 			except Exception as e:
 				not_downloaded.append({'url': urls[i], 'erro': e})
-			os.system('clear')
+			os.system('cls || clear')
 
 		print(f'Playlist: {url_playlist}\nNúmero de vídeos encontrados: {len(urls)}\nVídeos:')
 		print(f'\tBaixado!!!\t\t[{len(urls)}\\{len(urls)} - 100% ]')
